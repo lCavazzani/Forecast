@@ -5,9 +5,11 @@
   "main": "index.js",
   "repository": "https://github.com/lCavazzani/Forecast.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "node server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "postinstall": "webpack -p"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +24,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-preset-stage-1": "^6.1.18",
+    "express": "^4.16.3",
     "lodash": "^4.17.5",
     "react": "16.3.2",
     "react-dom": "16.3.2",
